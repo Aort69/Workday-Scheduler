@@ -1,5 +1,4 @@
 //DOM Elements
-const date = document.getElementById("date");
 
 const monthName = [
   "January",
@@ -29,15 +28,9 @@ weekday[6] = "Saturday";
 //show time
 
 function showDate() {
-  var date = new Date();
-  document.write(
-    (innerHTML =
-      weekday[d.getDay()] +
-      ", " +
-      monthName[date.getMonth()] +
-      " " +
-      date.getDate()) + " " + date.getFullYear()
-  );
+    var date = new Date();
+  document.getElementById("date").innerHTML =
+      weekday[d.getDay()] + ", " + monthName[date.getMonth()] + " " + date.getDate() + " " + date.getFullYear();
 
 }
 
