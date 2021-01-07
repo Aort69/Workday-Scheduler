@@ -34,4 +34,15 @@ function showDate() {
 
 }
 
+function timedColor() {
+    var tc = new Date();
+var hourCompare = tc.getHours();
+if (hourCompare >= 8 && hourCompare <= 17) {
+    //day time
+    $('#time').css("background-color", "red");
+} else {
+    //night time
+    $('#time').css("background-color", "green");
+}
+}
 showDate();
