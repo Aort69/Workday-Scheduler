@@ -62,9 +62,10 @@ $(".saveBtn").click(function () {
   var userInput = $(this).siblings(".colorMe").text().trim();
   console.log(userInput);
   var hour = $(this).siblings(".hour").text().trim();
-  localStorage.setItem('userInput', hour)
+  localStorage.setItem(hour, userInput)
   var savedInput = $(this).siblings('.hour').attr('data-time')
-  localStorage.getItem('userInput', savedInput)
+  
+  localStorage.getItem(userInput)
   });
 
 timedColor();
