@@ -49,25 +49,23 @@ function timedColor() {
     var currentHour = date.getHours();
     if (hour > currentHour) {
       timeBlocks[i].classList.add("future");
-    }
-    else if (hour === currentHour) {
+    } else if (hour === currentHour) {
       timeBlocks[i].classList.add("present");
-    }
-    else if (hour < currentHour) {
+    } else if (hour < currentHour) {
       timeBlocks[i].classList.add("past");
     }
   }
 }
 
 // click function
-$( ".saveBtn" ).click(function() {
-  var userInput = $(this).siblings('.colorMe').text().trim()
-  console.log(userInput)
-});
-
-
-
-
+$(".saveBtn").click(function () {
+  var userInput = $(this).siblings(".colorMe").text().trim();
+  console.log(userInput);
+  var hour = $(this).siblings(".hour").text().trim();
+  localStorage.setItem('userInput', hour)
+  var savedInput = $(this).siblings('.hour').attr('data-time')
+  localStorage.getItem('userInput', savedInput)
+  });
 
 timedColor();
 showDate();
