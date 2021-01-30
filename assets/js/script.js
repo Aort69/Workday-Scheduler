@@ -56,17 +56,27 @@ function timedColor() {
     }
   }
 }
+// load local storage
+
+function textDisplay() {
+  var allHours = $(".hour");
+  allHours.each(function () {
+    var savedContent = localStorage.getItem($(this).text());
+    $(this).siblings(".colorMe").text(savedContent);
+  });
+}
 
 // click function
 $(".saveBtn").click(function () {
   var userInput = $(this).siblings(".colorMe").text().trim();
   console.log(userInput);
   var hour = $(this).siblings(".hour").text().trim();
-  localStorage.setItem(hour, userInput)
-  var savedInput = $(this).siblings('.hour').attr('data-time')
-  
-  localStorage.getItem(userInput)
-  });
+  localStorage.setItem(hour, userInput);
+  console.log(userInput, hour);
+
+  //this is a test line nothing more
+});
 
 timedColor();
 showDate();
+textDisplay();
